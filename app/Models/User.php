@@ -20,7 +20,10 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'username',
         'password',
+        'avatar',
+        'role',
     ];
 
     /**
@@ -38,11 +41,31 @@ class User extends Authenticatable
      *
      * @return array<string, string>
      */
-    protected function casts(): array
+
+    public const  MIN_PASSWORD = 6;
+    public const ROLE_ADMIN = 0;
+    public const ROLE_LECTURE = 1;
+    public const ROLE_STUDENT = 2;
+
+    public static function passwordRules()
     {
         return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
+            'password' => 'required|min:' . self::MIN_PASSWORD,
         ];
+    }
+
+    // Hàm tiện ích để lấy tên role
+    public static function getRoleOptions()
+    {
+        return [
+            self::ROLE_ADMIN => 'Admin',
+            self::ROLE_LECTURE => 'Lecture',
+            self::ROLE_STUDENT => 'Student',
+        ];
+    }
+
+    public function getRoleName()
+    {
+        return self::getRoleOptions()[$this->role] ?? 'Unknown';
     }
 }
