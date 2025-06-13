@@ -1,0 +1,42 @@
+composer create-project laravel/laravel music-box-web
+cd music-box-web
+
+php artisan make:migration create_users_table
+php artisan make:migration create_artists_table
+php artisan make:migration create_songs_table
+php artisan make:migration create_albums_table
+php artisan make:migration create_playlists_table
+php artisan make:migration create_playlist_song_table
+php artisan make:migration create_follows_table
+php artisan make:migration create_listens_table
+php artisan make:migration create_likes_table
+php artisan make:migration create_logs_table
+
+
+* Google login
+composer require laravel/socialite
+
+- Cấu hình socialite trong config/services.php:
+'google' => [
+    'client_id' => env('GOOGLE_CLIENT_ID'),
+    'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+    'redirect' => env('GOOGLE_REDIRECT_URI'),
+],
+- Cấu hình routes/web.php:
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
+Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
+
+
+php artisan make:model User -m
+php artisan session:table
+php artisan migrate
+
+php artisan migrate:rollback
+php artisan migrate:fresh
+
+
+composer require laravel/socialite
+
+php artisan serve
+
+
