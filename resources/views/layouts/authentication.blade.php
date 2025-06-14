@@ -42,7 +42,16 @@
 
 
     <div class="content">
-        @yield('content')
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 order-md-2">
+                    <img src="{{ asset('img/login/wp2400321.webp') }}" alt="Image" class="img-fluid">
+                </div>
+                @yield('content')
+
+            </div>
+        </div>
     </div>
 
 
@@ -56,6 +65,21 @@
     <!-- Toastr JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
+    <script>
+        function togglePassword(inputId, el) {
+            const input = document.getElementById(inputId);
+            const icon = el.querySelector('i');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+    </script>
 
     @if (session('success'))
         <script>
