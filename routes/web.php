@@ -27,10 +27,10 @@ Route::middleware('guest')->group(function () {
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 Route::post('/signup', [AuthController::class, 'signup'])->name('signup.submit');
 
-Route::get('/logout', function () {
+Route::post('/logout', function () {
     Auth::logout();
     cookie()->queue(cookie()->forget('user_login'));
-    return redirect('/login');
+    return redirect('/');
 })->name('logout');
 
 Route::get('/forgot-password', [AuthController::class, 'forgotPassword'])->name('password.request');

@@ -50,251 +50,277 @@
     </section>
     <!-- ##### Hero Area End ##### -->
 
-    <!-- ##### Latest Albums Area Start ##### -->
-    <section class="latest-albums-area section-padding-100" style="background-color: #1e1e2f;">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading">
-                        <h2 class="text-white">
-                            <i class="fa fa-user-circle me-2 text-primary"></i>
-                            My albums/songs
-                        </h2>
-                        <p class="text-muted">These are the songs and albums you've uploaded.</p>
-                    </div>
-                </div>
-            </div>
-
-            {{-- Nút Upload và AI --}}
-            <div class="row mb-4">
-                <div class="col-12 text-end">
-                    <a href="" class="btn btn-outline-light me-2">
-                        <i class="fa fa-upload me-1"></i> Upload New
-                    </a>
-                    <a href="" class="btn btn-outline-primary">
-                        <i class="fa fa-robot me-1"></i> Make Music with AI
-                    </a>
-                </div>
-            </div>
-
-
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="albums-slideshow owl-carousel">
-                        <!-- Single Album -->
-                        <div class="single-album">
-                            <img src="{{ asset('img/logo.png') }}" alt="">
-                            <div class="album-info">
-                                <a href="#">
-                                    <h5 class="text-white">The Cure</h5>
-                                </a>
-                                <p>Second Song</p>
-                                <p class="text-muted small mb-0">
-                                    <i class="fa fa-headphones me-1"></i> 12.3k listens
-                                    &nbsp;&nbsp;
-                                    <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Single Album -->
-                        <div class="single-album">
-                            <img src="{{ asset('img/logo.png') }}" alt="">
-                            <div class="album-info">
-                                <a href="#">
-                                    <h5 class="text-white">The Cure</h5>
-                                </a>
-                                <p>Second Song</p>
-                                <p class="text-muted small mb-0">
-                                    <i class="fa fa-headphones me-1"></i> 12.3k listens
-                                    &nbsp;&nbsp;
-                                    <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Single Album -->
-                        <div class="single-album">
-                            <img src="{{ asset('img/logo.png') }}" alt="">
-                            <div class="album-info">
-                                <a href="#">
-                                    <h5 class="text-white">The Cure</h5>
-                                </a>
-                                <p>Second Song</p>
-                                <p class="text-muted small mb-0">
-                                    <i class="fa fa-headphones me-1"></i> 12.3k listens
-                                    &nbsp;&nbsp;
-                                    <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Single Album -->
-                        <div class="single-album">
-                            <img src="{{ asset('img/logo.png') }}" alt="">
-                            <div class="album-info">
-                                <a href="#">
-                                    <h5 class="text-white">The Cure</h5>
-                                </a>
-                                <p>Second Song</p>
-                                <p class="text-muted small mb-0">
-                                    <i class="fa fa-headphones me-1"></i> 12.3k listens
-                                    &nbsp;&nbsp;
-                                    <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Single Album -->
-                        <div class="single-album">
-                            <img src="{{ asset('img/logo.png') }}" alt="">
-                            <div class="album-info">
-                                <a href="#">
-                                    <h5 class="text-white">The Cure</h5>
-                                </a>
-                                <p>Second Song</p>
-                                <p class="text-muted small mb-0">
-                                    <i class="fa fa-headphones me-1"></i> 12.3k listens
-                                    &nbsp;&nbsp;
-                                    <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                </p>
-                            </div>
+    @auth
+        <!-- ##### Latest Albums Area Start ##### -->
+        <section class="latest-albums-area section-padding-100" style="background-color: #1e1e2f;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-heading">
+                            <h2 class="text-white">
+                                <i class="fa fa-user-circle me-2 text-primary"></i>
+                                My albums/songs
+                            </h2>
+                            <p class="text-muted">These are the songs and albums you've uploaded.</p>
                         </div>
                     </div>
                 </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-12">
-                    <div class="load-more-btn text-center wow fadeInUp" data-wow-delay="300ms">
-                        <a href="#" class="btn oneMusic-btn">Load More <i class="fa fa-angle-double-right"></i></a>
+
+                {{-- Nút Upload và AI --}}
+                <div class="row mb-4">
+                    <div class="col-12 text-end">
+                        <a href="" class="btn btn-outline-light me-2">
+                            <i class="fa fa-upload me-1"></i> Upload New
+                        </a>
+                        <a href="" class="btn btn-outline-primary">
+                            <i class="fa fa-robot me-1"></i> Make Music with AI
+                        </a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <!-- ##### Latest Albums Area End ##### -->
 
-    <!-- ##### Latest Albums Area Start ##### -->
-    <section class="latest-albums-area section-padding-100" style="background-color: #173b3e;">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading">
-                        <h2 class="text-white">
-                            <i class="fa fa fa-headphones text-primary"></i>
-                            My playlists
-                        </h2>
-                        <p class="text-muted mb-0">Browse and manage your personal playlists.</p>
-                    </div>
-                </div>
-            </div>
-            {{-- Nút Upload và AI --}}
-            <div class="row mb-4">
-                <div class="col-12 text-end">
-                    <a href="" class="btn btn-outline-success">
-                        <i class="fa fa-plus me-1"></i> Create New Playlist
-                    </a>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col-12">
-                    <div class="albums-slideshow owl-carousel">
-                        <!-- Single Album -->
-                        <div class="single-album">
-                            <img src="{{ asset('img/logo.png') }}" alt="">
-                            <div class="album-info">
-                                <a href="#">
-                                    <h5 class="text-white">The Cure</h5>
-                                </a>
-                                <p>Second Song</p>
-                                <p class="text-muted small mb-0">
-                                    <i class="fa fa-headphones me-1"></i> 12.3k listens
-                                    &nbsp;&nbsp;
-                                    <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                </p>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="albums-slideshow owl-carousel">
+                            <!-- Single Album -->
+                            <div class="single-album">
+                                <img src="{{ asset('img/logo.png') }}" alt="">
+                                <div class="album-info">
+                                    <a href="#">
+                                        <h5 class="text-white">The Cure</h5>
+                                    </a>
+                                    <p>Second Song</p>
+                                    <p class="text-muted small mb-0">
+                                        <i class="fa fa-headphones me-1"></i> 12.3k listens
+                                        &nbsp;&nbsp;
+                                        <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
+                                    </p>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Single Album -->
-                        <div class="single-album">
-                            <img src="{{ asset('img/logo.png') }}" alt="">
-                            <div class="album-info">
-                                <a href="#">
-                                    <h5 class="text-white">The Cure</h5>
-                                </a>
-                                <p>Second Song</p>
-                                <p class="text-muted small mb-0">
-                                    <i class="fa fa-headphones me-1"></i> 12.3k listens
-                                    &nbsp;&nbsp;
-                                    <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                </p>
+                            <!-- Single Album -->
+                            <div class="single-album">
+                                <img src="{{ asset('img/logo.png') }}" alt="">
+                                <div class="album-info">
+                                    <a href="#">
+                                        <h5 class="text-white">The Cure</h5>
+                                    </a>
+                                    <p>Second Song</p>
+                                    <p class="text-muted small mb-0">
+                                        <i class="fa fa-headphones me-1"></i> 12.3k listens
+                                        &nbsp;&nbsp;
+                                        <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
+                                    </p>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Single Album -->
-                        <div class="single-album">
-                            <img src="{{ asset('img/logo.png') }}" alt="">
-                            <div class="album-info">
-                                <a href="#">
-                                    <h5 class="text-white">The Cure</h5>
-                                </a>
-                                <p>Second Song</p>
-                                <p class="text-muted small mb-0">
-                                    <i class="fa fa-headphones me-1"></i> 12.3k listens
-                                    &nbsp;&nbsp;
-                                    <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                </p>
+                            <!-- Single Album -->
+                            <div class="single-album">
+                                <img src="{{ asset('img/logo.png') }}" alt="">
+                                <div class="album-info">
+                                    <a href="#">
+                                        <h5 class="text-white">The Cure</h5>
+                                    </a>
+                                    <p>Second Song</p>
+                                    <p class="text-muted small mb-0">
+                                        <i class="fa fa-headphones me-1"></i> 12.3k listens
+                                        &nbsp;&nbsp;
+                                        <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
+                                    </p>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Single Album -->
-                        <div class="single-album">
-                            <img src="{{ asset('img/logo.png') }}" alt="">
-                            <div class="album-info">
-                                <a href="#">
-                                    <h5 class="text-white">The Cure</h5>
-                                </a>
-                                <p>Second Song</p>
-                                <p class="text-muted small mb-0">
-                                    <i class="fa fa-headphones me-1"></i> 12.3k listens
-                                    &nbsp;&nbsp;
-                                    <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                </p>
+                            <!-- Single Album -->
+                            <div class="single-album">
+                                <img src="{{ asset('img/logo.png') }}" alt="">
+                                <div class="album-info">
+                                    <a href="#">
+                                        <h5 class="text-white">The Cure</h5>
+                                    </a>
+                                    <p>Second Song</p>
+                                    <p class="text-muted small mb-0">
+                                        <i class="fa fa-headphones me-1"></i> 12.3k listens
+                                        &nbsp;&nbsp;
+                                        <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
+                                    </p>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Single Album -->
-                        <div class="single-album">
-                            <img src="{{ asset('img/logo.png') }}" alt="">
-                            <div class="album-info">
-                                <a href="#">
-                                    <h5 class="text-white">The Cure</h5>
-                                </a>
-                                <p>Second Song</p>
-                                <p class="text-muted small mb-0">
-                                    <i class="fa fa-headphones me-1"></i> 12.3k listens
-                                    &nbsp;&nbsp;
-                                    <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                </p>
+                            <!-- Single Album -->
+                            <div class="single-album">
+                                <img src="{{ asset('img/logo.png') }}" alt="">
+                                <div class="album-info">
+                                    <a href="#">
+                                        <h5 class="text-white">The Cure</h5>
+                                    </a>
+                                    <p>Second Song</p>
+                                    <p class="text-muted small mb-0">
+                                        <i class="fa fa-headphones me-1"></i> 12.3k listens
+                                        &nbsp;&nbsp;
+                                        <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-12">
-                    <div class="load-more-btn text-center wow fadeInUp" data-wow-delay="300ms">
-                        <a href="#" class="btn oneMusic-btn">Load More <i class="fa fa-angle-double-right"></i></a>
+                <br>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="load-more-btn text-center wow fadeInUp" data-wow-delay="300ms">
+                            <a href="#" class="btn oneMusic-btn">Load More <i class="fa fa-angle-double-right"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- ##### Latest Albums Area End ##### -->
+        </section>
+        <!-- ##### Latest Albums Area End ##### -->
+
+        <!-- ##### Latest Albums Area Start ##### -->
+        <section class="latest-albums-area section-padding-100" style="background-color: #173b3e;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-heading">
+                            <h2 class="text-white">
+                                <i class="fa fa fa-headphones text-primary"></i>
+                                My playlists
+                            </h2>
+                            <p class="text-muted mb-0">Browse and manage your personal playlists.</p>
+                        </div>
+                    </div>
+                </div>
+                {{-- Nút Upload và AI --}}
+                <div class="row mb-4">
+                    <div class="col-12 text-end">
+                        <a href="" class="btn btn-outline-success">
+                            <i class="fa fa-plus me-1"></i> Create New Playlist
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="albums-slideshow owl-carousel">
+                            <!-- Single Album -->
+                            <div class="single-album">
+                                <img src="{{ asset('img/logo.png') }}" alt="">
+                                <div class="album-info">
+                                    <a href="#">
+                                        <h5 class="text-white">The Cure</h5>
+                                    </a>
+                                    <p>Second Song</p>
+                                    <p class="text-muted small mb-0">
+                                        <i class="fa fa-headphones me-1"></i> 12.3k listens
+                                        &nbsp;&nbsp;
+                                        <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Single Album -->
+                            <div class="single-album">
+                                <img src="{{ asset('img/logo.png') }}" alt="">
+                                <div class="album-info">
+                                    <a href="#">
+                                        <h5 class="text-white">The Cure</h5>
+                                    </a>
+                                    <p>Second Song</p>
+                                    <p class="text-muted small mb-0">
+                                        <i class="fa fa-headphones me-1"></i> 12.3k listens
+                                        &nbsp;&nbsp;
+                                        <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Single Album -->
+                            <div class="single-album">
+                                <img src="{{ asset('img/logo.png') }}" alt="">
+                                <div class="album-info">
+                                    <a href="#">
+                                        <h5 class="text-white">The Cure</h5>
+                                    </a>
+                                    <p>Second Song</p>
+                                    <p class="text-muted small mb-0">
+                                        <i class="fa fa-headphones me-1"></i> 12.3k listens
+                                        &nbsp;&nbsp;
+                                        <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Single Album -->
+                            <div class="single-album">
+                                <img src="{{ asset('img/logo.png') }}" alt="">
+                                <div class="album-info">
+                                    <a href="#">
+                                        <h5 class="text-white">The Cure</h5>
+                                    </a>
+                                    <p>Second Song</p>
+                                    <p class="text-muted small mb-0">
+                                        <i class="fa fa-headphones me-1"></i> 12.3k listens
+                                        &nbsp;&nbsp;
+                                        <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Single Album -->
+                            <div class="single-album">
+                                <img src="{{ asset('img/logo.png') }}" alt="">
+                                <div class="album-info">
+                                    <a href="#">
+                                        <h5 class="text-white">The Cure</h5>
+                                    </a>
+                                    <p>Second Song</p>
+                                    <p class="text-muted small mb-0">
+                                        <i class="fa fa-headphones me-1"></i> 12.3k listens
+                                        &nbsp;&nbsp;
+                                        <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="load-more-btn text-center wow fadeInUp" data-wow-delay="300ms">
+                            <a href="#" class="btn oneMusic-btn">Load More <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ##### Latest Albums Area End ##### -->
+    @else
+        <!-- ##### Latest Albums Area Start ##### -->
+        <section class="latest-albums-area section-padding-100" style="background-color: #1e1e2f; padding-bottom: 10px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="section-heading">
+                            <h2 class="text-white">
+                                <i class="fa fa-lock me-2 text-warning"></i>
+                                Please log in to view your albums, songs and playlists
+                            </h2>
+                            <p class="text-muted mb-4">
+                                Sign in to manage your uploaded music and explore your personal content.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ##### Latest Albums Area End ##### -->
+    @endauth
+
+
+
+
 
     <!-- ##### Latest Albums Area Start ##### -->
     <section class="latest-albums-area section-padding-100" style="background-color: #172e3e;">
@@ -542,227 +568,248 @@
     </section>
     <!-- ##### Latest Albums Area End ##### -->
 
-    <!-- ##### Latest Albums Area Start ##### -->
-    <section class="latest-albums-area section-padding-100" style="background-color: #173b3e;">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading">
-                        <h2 class="text-white">
-                            <i class="fa fa-gift text-danger"></i>
-                            Albums/songs for you
-                        </h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="albums-slideshow owl-carousel">
-                        <!-- Single Album -->
-                        <div class="single-album">
-                            <img src="{{ asset('img/logo.png') }}" alt="">
-                            <div class="album-info">
-                                <a href="#">
-                                    <h5 class="text-white">The Cure</h5>
-                                </a>
-                                <p>Second Song</p>
-                                <p class="text-muted small mb-0">
-                                    <i class="fa fa-headphones me-1"></i> 12.3k listens
-                                    &nbsp;&nbsp;
-                                    <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Single Album -->
-                        <div class="single-album">
-                            <img src="{{ asset('img/logo.png') }}" alt="">
-                            <div class="album-info">
-                                <a href="#">
-                                    <h5 class="text-white">The Cure</h5>
-                                </a>
-                                <p>Second Song</p>
-                                <p class="text-muted small mb-0">
-                                    <i class="fa fa-headphones me-1"></i> 12.3k listens
-                                    &nbsp;&nbsp;
-                                    <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Single Album -->
-                        <div class="single-album">
-                            <img src="{{ asset('img/logo.png') }}" alt="">
-                            <div class="album-info">
-                                <a href="#">
-                                    <h5 class="text-white">The Cure</h5>
-                                </a>
-                                <p>Second Song</p>
-                                <p class="text-muted small mb-0">
-                                    <i class="fa fa-headphones me-1"></i> 12.3k listens
-                                    &nbsp;&nbsp;
-                                    <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Single Album -->
-                        <div class="single-album">
-                            <img src="{{ asset('img/logo.png') }}" alt="">
-                            <div class="album-info">
-                                <a href="#">
-                                    <h5 class="text-white">The Cure</h5>
-                                </a>
-                                <p>Second Song</p>
-                                <p class="text-muted small mb-0">
-                                    <i class="fa fa-headphones me-1"></i> 12.3k listens
-                                    &nbsp;&nbsp;
-                                    <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Single Album -->
-                        <div class="single-album">
-                            <img src="{{ asset('img/logo.png') }}" alt="">
-                            <div class="album-info">
-                                <a href="#">
-                                    <h5 class="text-white">The Cure</h5>
-                                </a>
-                                <p>Second Song</p>
-                                <p class="text-muted small mb-0">
-                                    <i class="fa fa-headphones me-1"></i> 12.3k listens
-                                    &nbsp;&nbsp;
-                                    <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                </p>
-                            </div>
+    @auth
+        <!-- ##### Latest Albums Area Start ##### -->
+        <section class="latest-albums-area section-padding-100" style="background-color: #173b3e;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-heading">
+                            <h2 class="text-white">
+                                <i class="fa fa-gift text-danger"></i>
+                                Albums/songs for you
+                            </h2>
                         </div>
                     </div>
                 </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-12">
-                    <div class="load-more-btn text-center wow fadeInUp" data-wow-delay="300ms">
-                        <a href="#" class="btn oneMusic-btn">Load More <i class="fa fa-angle-double-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ##### Latest Albums Area End ##### -->
 
-    <!-- ##### Latest Albums Area Start ##### -->
-    <section class="latest-albums-area section-padding-100" style="background-color: #172e3e;">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading">
-                        <h2 class="text-white">
-                            <i class="fa fa-clock text-danger"></i>
-                            Recent albums/songs
-                        </h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="albums-slideshow owl-carousel">
-                        <!-- Single Album -->
-                        <div class="single-album">
-                            <img src="{{ asset('img/logo.png') }}" alt="">
-                            <div class="album-info">
-                                <a href="#">
-                                    <h5 class="text-white">The Cure</h5>
-                                </a>
-                                <p>Second Song</p>
-                                <p class="text-muted small mb-0">
-                                    <i class="fa fa-headphones me-1"></i> 12.3k listens
-                                    &nbsp;&nbsp;
-                                    <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                </p>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="albums-slideshow owl-carousel">
+                            <!-- Single Album -->
+                            <div class="single-album">
+                                <img src="{{ asset('img/logo.png') }}" alt="">
+                                <div class="album-info">
+                                    <a href="#">
+                                        <h5 class="text-white">The Cure</h5>
+                                    </a>
+                                    <p>Second Song</p>
+                                    <p class="text-muted small mb-0">
+                                        <i class="fa fa-headphones me-1"></i> 12.3k listens
+                                        &nbsp;&nbsp;
+                                        <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
+                                    </p>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Single Album -->
-                        <div class="single-album">
-                            <img src="{{ asset('img/logo.png') }}" alt="">
-                            <div class="album-info">
-                                <a href="#">
-                                    <h5 class="text-white">The Cure</h5>
-                                </a>
-                                <p>Second Song</p>
-                                <p class="text-muted small mb-0">
-                                    <i class="fa fa-headphones me-1"></i> 12.3k listens
-                                    &nbsp;&nbsp;
-                                    <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                </p>
+                            <!-- Single Album -->
+                            <div class="single-album">
+                                <img src="{{ asset('img/logo.png') }}" alt="">
+                                <div class="album-info">
+                                    <a href="#">
+                                        <h5 class="text-white">The Cure</h5>
+                                    </a>
+                                    <p>Second Song</p>
+                                    <p class="text-muted small mb-0">
+                                        <i class="fa fa-headphones me-1"></i> 12.3k listens
+                                        &nbsp;&nbsp;
+                                        <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
+                                    </p>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Single Album -->
-                        <div class="single-album">
-                            <img src="{{ asset('img/logo.png') }}" alt="">
-                            <div class="album-info">
-                                <a href="#">
-                                    <h5 class="text-white">The Cure</h5>
-                                </a>
-                                <p>Second Song</p>
-                                <p class="text-muted small mb-0">
-                                    <i class="fa fa-headphones me-1"></i> 12.3k listens
-                                    &nbsp;&nbsp;
-                                    <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                </p>
+                            <!-- Single Album -->
+                            <div class="single-album">
+                                <img src="{{ asset('img/logo.png') }}" alt="">
+                                <div class="album-info">
+                                    <a href="#">
+                                        <h5 class="text-white">The Cure</h5>
+                                    </a>
+                                    <p>Second Song</p>
+                                    <p class="text-muted small mb-0">
+                                        <i class="fa fa-headphones me-1"></i> 12.3k listens
+                                        &nbsp;&nbsp;
+                                        <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
+                                    </p>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Single Album -->
-                        <div class="single-album">
-                            <img src="{{ asset('img/logo.png') }}" alt="">
-                            <div class="album-info">
-                                <a href="#">
-                                    <h5 class="text-white">The Cure</h5>
-                                </a>
-                                <p>Second Song</p>
-                                <p class="text-muted small mb-0">
-                                    <i class="fa fa-headphones me-1"></i> 12.3k listens
-                                    &nbsp;&nbsp;
-                                    <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                </p>
+                            <!-- Single Album -->
+                            <div class="single-album">
+                                <img src="{{ asset('img/logo.png') }}" alt="">
+                                <div class="album-info">
+                                    <a href="#">
+                                        <h5 class="text-white">The Cure</h5>
+                                    </a>
+                                    <p>Second Song</p>
+                                    <p class="text-muted small mb-0">
+                                        <i class="fa fa-headphones me-1"></i> 12.3k listens
+                                        &nbsp;&nbsp;
+                                        <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
+                                    </p>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Single Album -->
-                        <div class="single-album">
-                            <img src="{{ asset('img/logo.png') }}" alt="">
-                            <div class="album-info">
-                                <a href="#">
-                                    <h5 class="text-white">The Cure</h5>
-                                </a>
-                                <p>Second Song</p>
-                                <p class="text-muted small mb-0">
-                                    <i class="fa fa-headphones me-1"></i> 12.3k listens
-                                    &nbsp;&nbsp;
-                                    <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                </p>
+                            <!-- Single Album -->
+                            <div class="single-album">
+                                <img src="{{ asset('img/logo.png') }}" alt="">
+                                <div class="album-info">
+                                    <a href="#">
+                                        <h5 class="text-white">The Cure</h5>
+                                    </a>
+                                    <p>Second Song</p>
+                                    <p class="text-muted small mb-0">
+                                        <i class="fa fa-headphones me-1"></i> 12.3k listens
+                                        &nbsp;&nbsp;
+                                        <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-12">
-                    <div class="load-more-btn text-center wow fadeInUp" data-wow-delay="300ms">
-                        <a href="#" class="btn oneMusic-btn">Load More <i class="fa fa-angle-double-right"></i></a>
+                <br>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="load-more-btn text-center wow fadeInUp" data-wow-delay="300ms">
+                            <a href="#" class="btn oneMusic-btn">Load More <i class="fa fa-angle-double-right"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- ##### Latest Albums Area End ##### -->
+        </section>
+        <!-- ##### Latest Albums Area End ##### -->
+
+        <!-- ##### Latest Albums Area Start ##### -->
+        <section class="latest-albums-area section-padding-100" style="background-color: #172e3e;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-heading">
+                            <h2 class="text-white">
+                                <i class="fa fa-clock text-danger"></i>
+                                Recent albums/songs
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="albums-slideshow owl-carousel">
+                            <!-- Single Album -->
+                            <div class="single-album">
+                                <img src="{{ asset('img/logo.png') }}" alt="">
+                                <div class="album-info">
+                                    <a href="#">
+                                        <h5 class="text-white">The Cure</h5>
+                                    </a>
+                                    <p>Second Song</p>
+                                    <p class="text-muted small mb-0">
+                                        <i class="fa fa-headphones me-1"></i> 12.3k listens
+                                        &nbsp;&nbsp;
+                                        <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Single Album -->
+                            <div class="single-album">
+                                <img src="{{ asset('img/logo.png') }}" alt="">
+                                <div class="album-info">
+                                    <a href="#">
+                                        <h5 class="text-white">The Cure</h5>
+                                    </a>
+                                    <p>Second Song</p>
+                                    <p class="text-muted small mb-0">
+                                        <i class="fa fa-headphones me-1"></i> 12.3k listens
+                                        &nbsp;&nbsp;
+                                        <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Single Album -->
+                            <div class="single-album">
+                                <img src="{{ asset('img/logo.png') }}" alt="">
+                                <div class="album-info">
+                                    <a href="#">
+                                        <h5 class="text-white">The Cure</h5>
+                                    </a>
+                                    <p>Second Song</p>
+                                    <p class="text-muted small mb-0">
+                                        <i class="fa fa-headphones me-1"></i> 12.3k listens
+                                        &nbsp;&nbsp;
+                                        <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Single Album -->
+                            <div class="single-album">
+                                <img src="{{ asset('img/logo.png') }}" alt="">
+                                <div class="album-info">
+                                    <a href="#">
+                                        <h5 class="text-white">The Cure</h5>
+                                    </a>
+                                    <p>Second Song</p>
+                                    <p class="text-muted small mb-0">
+                                        <i class="fa fa-headphones me-1"></i> 12.3k listens
+                                        &nbsp;&nbsp;
+                                        <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Single Album -->
+                            <div class="single-album">
+                                <img src="{{ asset('img/logo.png') }}" alt="">
+                                <div class="album-info">
+                                    <a href="#">
+                                        <h5 class="text-white">The Cure</h5>
+                                    </a>
+                                    <p>Second Song</p>
+                                    <p class="text-muted small mb-0">
+                                        <i class="fa fa-headphones me-1"></i> 12.3k listens
+                                        &nbsp;&nbsp;
+                                        <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="load-more-btn text-center wow fadeInUp" data-wow-delay="300ms">
+                            <a href="#" class="btn oneMusic-btn">Load More <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ##### Latest Albums Area End ##### -->
+    @else
+        <!-- ##### Latest Albums Area Start ##### -->
+        <section class="latest-albums-area section-padding-100" style="background-color: #173b3e;padding-bottom: 10px">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-heading">
+                            <h2 class="text-white">
+                                <i class="fa fa-lock me-2 text-warning"></i>
+                                Please log in to view your albums and songs suggestions.
+                            </h2>
+                            <p class="text-muted mb-4">
+                                Sign in to view personalized song recommendations just for you.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <!-- ##### Latest Albums Area End ##### -->
+    @endauth
 
     <!-- ##### Buy Now Area Start ##### -->
     {{-- <section class="oneMusic-buy-now-area has-fluid bg-gray section-padding-100">

@@ -177,6 +177,20 @@
                                     <li><a href="event.html">Events</a></li>
                                     <li><a href="blog.html">News</a></li>
                                     <li><a href="contact.html">Contact</a></li>
+
+                                    <!-- Search form -->
+                                    <li>
+                                        <form action="" method="GET" class="d-flex align-items-center"
+                                            style="margin-left: 15px;">
+                                            <input type="text" name="query" class="form-control form-control-sm"
+                                                placeholder="Search songs, albums..."
+                                                style="width: 250px; background-color: #222; border: none; color: #fff;">
+                                            <button type="submit" class="btn btn-sm text-white"
+                                                style="margin-left: 5px;">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </form>
+                                    </li>
                                 </ul>
 
                                 <div
