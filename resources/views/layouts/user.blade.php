@@ -154,9 +154,6 @@
                                         <ul class="dropdown">
                                             <li><a href="index.html">Home</a></li>
                                             <li><a href="albums-store.html">Albums</a></li>
-                                            <li><a href="event.html">Events</a></li>
-                                            <li><a href="blog.html">News</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
                                             <li><a href="elements.html">Elements</a></li>
                                             <li><a href="login.html">Login</a></li>
                                             <li><a href="#">Dropdown</a>
@@ -178,9 +175,6 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="event.html">Events</a></li>
-                                    <li><a href="blog.html">News</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
 
                                     <!-- Search form -->
                                     <li>
@@ -378,49 +372,52 @@
         </div>
     </main>
 
+
+
     <!-- Modal -->
     <div class="modal fade" id="songDetailModal" tabindex="-1" aria-labelledby="songDetailLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="songDetailLabel">Chi tiết bài hát</h5>
+            <div class="modal-content bg-dark text-white"> <!-- đổi sang dark -->
+                <div class="modal-header border-0">
+                    <h5 class="modal-title text-white" id="songDetailLabel">Chi tiết bài hát</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="d-flex">
                         <img src="{{ asset('img/logo_circle.png') }}" class="rounded me-4"
                             style="width: 150px; height: 150px; object-fit: cover;">
                         <div>
-                            <h4>Tên bài hát</h4>
+                            <h4 class="text-white">Tên bài hát</h4>
                             <p><strong>Nghệ sĩ:</strong> Tên nghệ sĩ</p>
                             <p><strong>Album:</strong> Tên album</p>
                             <p><strong>Ngày phát hành:</strong> 01/01/2024</p>
                             <p><strong>Mô tả:</strong> Đây là bài hát nổi bật trong album mới nhất...</p>
                         </div>
                     </div>
+
                     <!-- Lyrics section -->
                     <div class="mt-4">
                         <div class="d-flex align-items-center justify-content-between mb-2">
                             <h5 class="mb-0">Lời bài hát</h5>
-                            <button class="btn btn-sm btn-outline-secondary" onclick="copyLyrics()"
-                                title="Copy lyrics">
+                            <button class="btn btn-sm btn-outline-light" onclick="copyLyrics()" title="Copy lyrics">
                                 <i class="fa fa-copy"></i>
                             </button>
                         </div>
                         <div id="lyricsContent"
-                            style="max-height: 200px; overflow-y: auto; background-color: #f8f9fa; padding: 10px; border-radius: 5px;">
+                            style="max-height: 200px; overflow-y: auto; background-color: #2c2c2c; color: #ccc; padding: 10px; border-radius: 5px;">
                             Đây là lời bài hát...<br>Line 2<br>Line 3<br>Line 4<br>
                             Line 2<br>Line 3<br>Line 4<br>
                             Line 2<br>Line 3<br>Line 4<br>
                             Line 2<br>Line 3<br>Line 4<br>...
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
     </div>
+
 
     <!-- Music Bar -->
     <div class="music-player fixed-bottom text-white py-2 px-3 shadow-lg"
@@ -434,8 +431,8 @@
                     <div class="fw-bold">Tên bài hát</div>
                     <div class="text-muted" style="font-size: 0.85rem;">Tên nghệ sĩ</div>
                 </div>
-                <button onclick="openSongDetailModal()" class="btn btn-sm btn-link text-white ms-2"
-                    style="font-size: 1.2rem;" title="Chi tiết">
+                <button class="btn btn-sm btn-link text-white ms-2" style="font-size: 1.2rem;" title="Chi tiết"
+                    data-bs-toggle="modal" data-bs-target="#songDetailModal">
                     <i class="fas fa-chevron-up"></i>
                 </button>
             </div>
@@ -543,11 +540,6 @@
         volumeControl.value = previousVolume;
         volumePercent.textContent = previousVolume + '%';
         audio.volume = previousVolume / 100;
-
-        function openSongDetailModal() {
-            const modal = new bootstrap.Modal(document.getElementById('songDetailModal'));
-            modal.show();
-        }
 
         // Cập nhật % khi kéo
         volumeControl.addEventListener('input', function() {
@@ -757,8 +749,6 @@
             });
         </script>
     @endif
-
-
 
 
 

@@ -39,3 +39,10 @@ Route::get('/verify-otp', [AuthController::class, 'showOtpForm'])->name('passwor
 Route::post('/verify-otp', [AuthController::class, 'verifyOtp'])->name('password.verify');
 Route::get('/auth/google', [AuthController::class, 'redirectToGoogle'])->name('google.login');
 Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback']);
+
+
+
+
+Route::get('/detail-playlist', function () {
+    return view('users.detail_playlist');
+});

@@ -191,7 +191,6 @@
                         </div>
                     </div>
                 </div>
-                {{-- Nút Upload và AI --}}
                 <div class="row mb-4">
                     <div class="col-12 text-end">
                         <a href="" class="btn btn-outline-success">
@@ -211,11 +210,11 @@
                                         <h5 class="text-white">The Cure</h5>
                                     </a>
                                     <p>Second Song</p>
-                                    <p class="text-muted small mb-0">
+                                    {{-- <p class="text-muted small mb-0">
                                         <i class="fa fa-headphones me-1"></i> 12.3k listens
                                         &nbsp;&nbsp;
                                         <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                    </p>
+                                    </p> --}}
                                 </div>
                             </div>
 
@@ -227,11 +226,6 @@
                                         <h5 class="text-white">The Cure</h5>
                                     </a>
                                     <p>Second Song</p>
-                                    <p class="text-muted small mb-0">
-                                        <i class="fa fa-headphones me-1"></i> 12.3k listens
-                                        &nbsp;&nbsp;
-                                        <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                    </p>
                                 </div>
                             </div>
 
@@ -243,11 +237,6 @@
                                         <h5 class="text-white">The Cure</h5>
                                     </a>
                                     <p>Second Song</p>
-                                    <p class="text-muted small mb-0">
-                                        <i class="fa fa-headphones me-1"></i> 12.3k listens
-                                        &nbsp;&nbsp;
-                                        <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                    </p>
                                 </div>
                             </div>
 
@@ -259,11 +248,6 @@
                                         <h5 class="text-white">The Cure</h5>
                                     </a>
                                     <p>Second Song</p>
-                                    <p class="text-muted small mb-0">
-                                        <i class="fa fa-headphones me-1"></i> 12.3k listens
-                                        &nbsp;&nbsp;
-                                        <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                    </p>
                                 </div>
                             </div>
 
@@ -275,11 +259,6 @@
                                         <h5 class="text-white">The Cure</h5>
                                     </a>
                                     <p>Second Song</p>
-                                    <p class="text-muted small mb-0">
-                                        <i class="fa fa-headphones me-1"></i> 12.3k listens
-                                        &nbsp;&nbsp;
-                                        <i class="fa fa-heart me-1 text-danger"></i> 1.2k likes
-                                    </p>
                                 </div>
                             </div>
                         </div>
