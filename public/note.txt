@@ -3,6 +3,7 @@ cd music-box-web
 
 php artisan make:migration create_users_table
 php artisan make:migration create_songs_table
+php artisan make:migration create_song_roles_table
 php artisan make:migration create_albums_table
 php artisan make:migration create_album_song_table
 php artisan make:migration create_playlists_table
@@ -15,6 +16,8 @@ php artisan make:migration create_password_resets_table
 php artisan session:table
 php artisan make:middleware RedirectIfAuthenticated
 
+php artisan make:model User
+php artisan make:model Song
 
 * Google login
 composer require laravel/socialite
@@ -31,7 +34,8 @@ Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallba
 
 
 
-php artisan make:model User -m
+php artisan make:model User
+
 php artisan session:table
 php artisan migrate
 

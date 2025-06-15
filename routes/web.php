@@ -7,8 +7,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+    return view('users.home');
+})->name('users.home');
+
+Route::get('/home', function () {
+    return redirect()->route('users.home');
+});
 
 //login logout sign up
 Route::middleware('guest')->group(function () {

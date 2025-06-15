@@ -46,9 +46,9 @@ class AuthController extends Controller
 
                 Auth::login($user, remember: $remember);
                 if ($user->role === User::ROLE_ADMIN) {
-                    $response = redirect()->route('welcome');
+                    $response = redirect()->route('users.home');
                 } else {
-                    $response = redirect()->route('welcome');
+                    $response = redirect()->route('users.home');
                 }
                 return $response->with('success', 'Login successful!');
             } else {
@@ -160,9 +160,9 @@ class AuthController extends Controller
 
 
         if ($user->role === User::ROLE_ADMIN) {
-            $response = redirect()->route('welcome');
+            $response = redirect()->route('users.home');
         } else {
-            $response = redirect()->route('welcome');
+            $response = redirect()->route('users.home');
         }
         $response = $response->with('success', 'Logged in with Google!');
 
