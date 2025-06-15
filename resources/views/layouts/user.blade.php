@@ -15,6 +15,10 @@
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+
     {{-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('login-form-08/fonts/icomoon/style.css') }}">
@@ -394,6 +398,25 @@
                             <p><strong>Mô tả:</strong> Đây là bài hát nổi bật trong album mới nhất...</p>
                         </div>
                     </div>
+                    <!-- Lyrics section -->
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <h5 class="mb-0">Lời bài hát</h5>
+                            <button class="btn btn-sm btn-outline-secondary" onclick="copyLyrics()"
+                                title="Copy lyrics">
+                                <i class="fa fa-copy"></i>
+                            </button>
+                        </div>
+                        <div id="lyricsContent"
+                            style="max-height: 200px; overflow-y: auto; background-color: #f8f9fa; padding: 10px; border-radius: 5px;">
+                            Đây là lời bài hát...<br>Line 2<br>Line 3<br>Line 4<br>
+                            Line 2<br>Line 3<br>Line 4<br>
+                            Line 2<br>Line 3<br>Line 4<br>
+                            Line 2<br>Line 3<br>Line 4<br>...
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </div>
@@ -499,6 +522,10 @@
     <!-- ##### Footer Area Start ##### -->
 
     <!-- ##### All Javascript Script ##### -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 
     <script>
         const audio = document.getElementById('audioPlayer');
@@ -658,6 +685,17 @@
         window.addEventListener('click', function() {
             contextMenu.style.display = 'none';
         });
+
+        function copyLyrics() {
+            const lyricsElement = document.getElementById("lyricsContent");
+            const tempText = lyricsElement.innerText;
+
+            navigator.clipboard.writeText(tempText).then(() => {
+                toastr.success("Lyrics copied to clipboard!");
+            }).catch(err => {
+                toastr.error("Failed to copy lyrics: " + err);
+            });
+        }
     </script>
 
     <!-- jQuery-2.2.4 js -->
