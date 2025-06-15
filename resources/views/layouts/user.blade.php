@@ -306,7 +306,23 @@
                                 class="rounded me-3 shadow" style="width: 60px; height: 60px; object-fit: cover;">
                             <div>
                                 <h6 class="mb-1 text-white fw-bold">Chill Hits</h6>
-                                <small class="text-muted d-block">by Sơn Tùng M-TP</small>
+                                <small class="text-muted d-block position-relative artist-hover-group">
+                                    by
+                                    <a href="/artist/son-tung-mtp"
+                                        class="text-decoration-underline text-reset artist-hover-link">
+                                        Sơn Tùng M-TP
+                                    </a>
+
+                                    <!-- Tooltip -->
+                                    <div class="artist-hover-box bg-dark text-white p-2 rounded shadow position-absolute"
+                                        style="display: none; min-width: 200px; top: 100%; left: 0; z-index: 1000;">
+                                        <div class="d-flex align-items-center">
+                                            <img src="{{ asset('img/logo_circle.png') }}" alt="Avatar"
+                                                class="rounded-circle me-2" style="width: 40px; height: 40px;">
+                                            <strong>Sơn Tùng M-TP</strong>
+                                        </div>
+                                    </div>
+                                </small>
                                 <small class="text-muted">Phát hành: 12/06/2025</small>
                             </div>
                         </div>

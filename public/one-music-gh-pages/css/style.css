@@ -2205,6 +2205,26 @@ img {
     margin: 0 2px;
     border-radius: 0;
 }
+.artist-hover-group {
+    position: relative;
+    display: inline-block;
+}
+
+.artist-hover-box {
+    display: none;
+    min-width: 200px;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    position: absolute;
+    transition: all 0.2s ease;
+}
+
+/* Hover vào link hoặc box đều hiện */
+.artist-hover-group:hover .artist-hover-box {
+    display: block;
+}
+
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .oneMusic-tabs-content .nav-tabs .nav-link {
         padding: 0 15px;

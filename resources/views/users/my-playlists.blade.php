@@ -1,5 +1,5 @@
 @extends('layouts.user')
-@section('title', config('constants.web_name') . ' - Detail playlist')
+@section('title', config('constants.web_name') . ' - My playlist')
 
 @section('content')
     <style>
@@ -41,14 +41,11 @@
                         </div>
 
                         <!-- Action buttons (Create + Delete) -->
-                        <div class="d-flex gap-2">
+                        <div class="d-flex">
                             <a onclick="openCreateModal()" class="btn btn-dark border-white text-white"
                                 data-bs-toggle="modal" data-bs-target="#createPlaylistModal">
                                 <i class="fa fa-plus me-1"></i> Create New Playlist
                             </a>
-                            <button class="btn btn-danger" id="deleteSelectedBtn" disabled>
-                                <i class="fa fa-trash me-1"></i> Delete Selected
-                            </button>
                         </div>
                     </div>
                 </div>

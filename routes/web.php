@@ -43,6 +43,6 @@ Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallbac
 
 
 
-Route::get('/detail-playlist', function () {
-    return view('users.detail_playlist');
-});
+Route::get('/my-playlists', function () {
+    return view('users.my-playlists');
+})->name('users.my-playlists');
