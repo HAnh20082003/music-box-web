@@ -59,26 +59,20 @@
                         <div class="section-heading">
                             <h2 class="text-white">
                                 <i class="fa fa-user-circle me-2 text-primary"></i>
-                                My albums/songs
+                                My Albums/Songs
                             </h2>
                             <p class="text-muted">These are the songs and albums you've uploaded.</p>
                         </div>
                     </div>
                 </div>
 
-                {{-- Nút Upload và AI --}}
                 <div class="row mb-4">
                     <div class="col-12 text-end">
-                        <a href="" class="btn btn-outline-light me-2">
-                            <i class="fa fa-upload me-1"></i> Upload New
-                        </a>
-                        <a href="" class="btn btn-outline-primary">
-                            <i class="fa fa-robot me-1"></i> Make Music with AI
+                        <a href="{{ route('users.my-albums-songs') }}" class="btn btn-outline-primary me-2">
+                            <i class="fa fa-upload me-1"></i> Creative albums/songs
                         </a>
                     </div>
                 </div>
-
-
 
                 <div class="row">
                     <div class="col-12">
@@ -169,7 +163,8 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="load-more-btn text-center wow fadeInUp" data-wow-delay="300ms">
-                            <a href="#" class="btn oneMusic-btn">Load More <i class="fa fa-angle-double-right"></i></a>
+                            <a href="{{ route('users.my-albums-songs') }}" class="btn oneMusic-btn">Load More <i
+                                    class="fa fa-angle-double-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -185,7 +180,7 @@
                         <div class="section-heading">
                             <h2 class="text-white">
                                 <i class="fa fa fa-headphones text-primary"></i>
-                                My playlists
+                                My Playlists
                             </h2>
                             <p class="text-muted mb-0">Browse and manage your personal playlists.</p>
                         </div>
@@ -310,7 +305,7 @@
                     <div class="section-heading">
                         <h2 class="text-white">
                             <i class="fa fa-fire text-danger"></i>
-                            Hot albums/songs
+                            Hot Musics
                         </h2>
                         <p class="text-muted">These are the most streamed and liked albums and songs by our community in
                             recent times.</p>
@@ -445,7 +440,7 @@
                     <div class="section-heading">
                         <h2 class="text-white">
                             <i class="fa fa-compact-disc text-white"></i>
-                            New Albums/songs
+                            New Musics
                         </h2>
                     </div>
                 </div>
@@ -557,7 +552,7 @@
                         <div class="section-heading">
                             <h2 class="text-white">
                                 <i class="fa fa-gift text-danger"></i>
-                                Albums/songs for you
+                                Musics for you
                             </h2>
                         </div>
                     </div>
@@ -668,7 +663,7 @@
                         <div class="section-heading">
                             <h2 class="text-white">
                                 <i class="fa fa-clock text-danger"></i>
-                                Recent albums/songs
+                                Recent Listens
                             </h2>
                         </div>
                     </div>
@@ -1402,27 +1397,6 @@
     <script src="js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const toggle = document.getElementById("userDropdownToggle");
-            const menu = document.getElementById("userDropdownMenu");
-
-            if (toggle && menu) {
-                toggle.addEventListener("click", function() {
-                    menu.style.display = menu.style.display === "none" || menu.style.display === "" ?
-                        "block" : "none";
-                });
-
-                // Ẩn dropdown khi click ra ngoài
-                document.addEventListener("click", function(e) {
-                    if (!toggle.contains(e.target) && !menu.contains(e.target)) {
-                        menu.style.display = "none";
-                    }
-                });
-            }
-        });
-    </script>
 
 
 @endsection

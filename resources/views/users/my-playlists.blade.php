@@ -19,7 +19,7 @@
                     <div class="section-heading">
                         <h2 class="text-white">
                             <i class="fa fa-user-circle me-2 text-primary"></i>
-                            My playlists
+                            My Playlists
                         </h2>
                         <p class="text-muted mb-0">Browse and manage your personal playlists.</p>
                     </div>
@@ -88,21 +88,23 @@
                     <nav aria-label="Page navigation" class="text-center">
                         <ul class="pagination justify-content-center">
                             <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1">&laquo;</a>
+                                <a class="page-link bg-dark text-white border-secondary" href="#"
+                                    tabindex="-1">&laquo;</a>
                             </li>
                             <li class="page-item active">
-                                <a class="page-link" href="#">1</a>
+                                <a class="page-link bg-primary text-white border-primary" href="#">1</a>
                             </li>
                             <li class="page-item">
-                                <a class="page-link" href="#">2</a>
+                                <a class="page-link bg-dark text-white border-secondary" href="#">2</a>
                             </li>
                             <li class="page-item">
-                                <a class="page-link" href="#">3</a>
+                                <a class="page-link bg-dark text-white border-secondary" href="#">3</a>
                             </li>
                             <li class="page-item">
-                                <a class="page-link" href="#">&raquo;</a>
+                                <a class="page-link bg-dark text-white border-secondary" href="#">&raquo;</a>
                             </li>
                         </ul>
+
                     </nav>
                 </div>
             </div>
@@ -221,7 +223,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     // TODO: xử lý xoá ở đây
-                    Swal.fire('Đã xoá!', 'Playlist đã được xoá.', 'success');
+                    Swal.fire('Đã xoá!', 'Delete playlist success', 'success');
                 }
             });
         }

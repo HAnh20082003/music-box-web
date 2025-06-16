@@ -42,11 +42,6 @@
     <link rel="stylesheet" href="{{ asset('one-music-gh-pages/css/style.css') }}">
 
     <style>
-        #scrollUp {
-            bottom: 120px !important;
-            /* cao hơn thanh player */
-        }
-
         .playlist-sidebar {
             position: sticky;
             top: 70px;
@@ -148,15 +143,12 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="albums-store.html">Albums</a></li>
-                                    <li><a href="#">Pages</a>
+                                    <li><a href="{{ route('users.home') }}">Home</a></li>
+                                    <li><a href="#">Music Personal</a>
                                         <ul class="dropdown">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="albums-store.html">Albums</a></li>
-                                            <li><a href="elements.html">Elements</a></li>
-                                            <li><a href="login.html">Login</a></li>
-                                            <li><a href="#">Dropdown</a>
+                                            <li><a href="{{ route('users.my-albums-songs') }}">My Albums/Songs</a></li>
+                                            <li><a href="{{ route('users.my-playlists') }}">My Playlists</a></li>
+                                            {{-- <li><a href="#">Dropdown</a>
                                                 <ul class="dropdown">
                                                     <li><a href="#">Even Dropdown</a></li>
                                                     <li><a href="#">Even Dropdown</a></li>
@@ -172,10 +164,16 @@
                                                     </li>
                                                     <li><a href="#">Even Dropdown</a></li>
                                                 </ul>
-                                            </li>
+                                            </li> --}}
                                         </ul>
                                     </li>
-
+                                    <li><a href="#">Explore Musics</a>
+                                        <ul class="dropdown">
+                                            <li><a href="#">Hot Musics</a></li>
+                                            <li><a href="#">New Musics</a></li>
+                                            <li><a href="#">Music for you</a></li>
+                                        </ul>
+                                    </li>
                                     <!-- Search form -->
                                     <li>
                                         <form action="" method="GET" class="d-flex align-items-center"
@@ -218,12 +216,12 @@
                                             <!-- Dropdown menu -->
                                             <div id="userDropdownMenu" class="position-absolute bg-white rounded shadow p-2"
                                                 style="top: 100%; right: 0; min-width: 160px; display: none; z-index: 1000;">
-                                                <a href="" class="dropdown-item text-dark">Hồ sơ cá
-                                                    nhân</a>
+                                                <a href="#" class="dropdown-item text-dark">My Profile</a>
+                                                <a href="#" class="dropdown-item text-dark">Recent Listens</a>
                                                 <form action="{{ route('logout') }}" method="POST" class="mb-0">
                                                     @csrf
-                                                    <button type="submit" class="dropdown-item text-danger">Đăng
-                                                        xuất</button>
+                                                    <button type="submit" class="dropdown-item text-danger">Log
+                                                        out</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -253,6 +251,10 @@
                 <li>Danh sách phát 3</li>
             </ul>
         </li>
+        @if (Route::currentRouteName() === 'users.my-albums-songs')
+            <li onclick="editSong()">Chỉnh sửa</li>
+            <li onclick="deleteSong()" class="text-danger">Xoá</li>
+        @endif
     </ul>
     <!-- ##### Header Area End ##### -->
     <main class="container-fluid bg-dark text-white" style="margin-bottom: 50px;">
@@ -307,22 +309,25 @@
                             <div>
                                 <h6 class="mb-1 text-white fw-bold">Chill Hits</h6>
                                 <small class="text-muted d-block position-relative artist-hover-group">
-                                    by
+                                    by&nbsp;
                                     <a href="/artist/son-tung-mtp"
-                                        class="text-decoration-underline text-reset artist-hover-link">
+                                        class="text-decoration-underline text-reset artist-hover-link fw-bold">
                                         Sơn Tùng M-TP
                                     </a>
 
                                     <!-- Tooltip -->
                                     <div class="artist-hover-box bg-dark text-white p-2 rounded shadow position-absolute"
                                         style="display: none; min-width: 200px; top: 100%; left: 0; z-index: 1000;">
-                                        <div class="d-flex align-items-center">
+                                        <a href="/artist/son-tung-mtp"
+                                            class="text-white text-decoration-none d-flex align-items-center">
                                             <img src="{{ asset('img/logo_circle.png') }}" alt="Avatar"
                                                 class="rounded-circle me-2" style="width: 40px; height: 40px;">
                                             <strong>Sơn Tùng M-TP</strong>
-                                        </div>
+                                        </a>
                                     </div>
+
                                 </small>
+
                                 <small class="text-muted">Phát hành: 12/06/2025</small>
                             </div>
                         </div>
@@ -475,6 +480,11 @@
                     <button class="btn btn-outline-light btn-sm" onclick="nextTrack()" style="width: 30px;">
                         <i class="fas fa-step-forward"></i>
                     </button>
+                    <!-- Nút lặp lại -->
+                    <button class="btn btn-outline-light btn-sm" id="repeatBtn" onclick="toggleRepeat()"
+                        style="width: 30px;">
+                        <i class="fas fa-sync-alt" id="repeatIcon"></i>
+                    </button>
                 </div>
 
                 <!-- Thanh thời gian -->
@@ -541,6 +551,37 @@
 
 
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const toggle = document.getElementById("userDropdownToggle");
+            const menu = document.getElementById("userDropdownMenu");
+
+            if (toggle && menu) {
+                toggle.addEventListener("click", function() {
+                    menu.style.display = menu.style.display === "none" || menu.style.display === "" ?
+                        "block" : "none";
+                });
+
+                // Ẩn dropdown khi click ra ngoài
+                document.addEventListener("click", function(e) {
+                    if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+                        menu.style.display = "none";
+                    }
+                });
+            }
+            const hoverGroups = document.querySelectorAll(".artist-hover-group");
+
+            hoverGroups.forEach(group => {
+                const tooltip = group.querySelector(".artist-hover-box");
+
+                group.addEventListener("mouseenter", () => {
+                    tooltip.style.display = "block";
+                });
+
+                group.addEventListener("mouseleave", () => {
+                    tooltip.style.display = "none";
+                });
+            });
+        });
         const audio = document.getElementById('audioPlayer');
         const playPauseIcon = document.getElementById('playPauseIcon');
         const volumeControl = document.getElementById('volumeControl');
@@ -552,6 +593,8 @@
         const timeCurrent = document.getElementById('timeCurrent');
         const timeDuration = document.getElementById('timeDuration');
         let isSeeking = false;
+
+        let isRepeating = false;
 
         volumeControl.value = previousVolume;
         volumePercent.textContent = previousVolume + '%';
@@ -621,6 +664,16 @@
         function forward(second) {
             audio.currentTime = Math.min(audio.currentTime + second, audio.duration);
         }
+
+        function toggleRepeat() {
+            const audio = document.getElementById("audioPlayer");
+            isRepeating = !isRepeating;
+            audio.loop = isRepeating;
+
+            const icon = document.getElementById("repeatIcon");
+            icon.classList.toggle("text-primary", isRepeating); // Đổi màu để biết đang lặp
+        }
+
         // Khi audio load xong
         audio.addEventListener('loadedmetadata', () => {
             seekBar.max = Math.floor(audio.duration);

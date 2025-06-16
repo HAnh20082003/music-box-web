@@ -2212,12 +2212,16 @@ img {
 
 .artist-hover-box {
     display: none;
-    min-width: 200px;
     top: 100%;
     left: 0;
     z-index: 1000;
     position: absolute;
     transition: all 0.2s ease;
+    border: 1px solid white;
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.15);
+    background-color: #1e1e1e;
+    padding: 6px 10px;
+    white-space: nowrap; /* Giữ tooltip trên 1 dòng */
 }
 
 /* Hover vào link hoặc box đều hiện */
